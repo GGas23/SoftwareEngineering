@@ -6,15 +6,66 @@ import java.util.List;
 import controllers.priorityController.*;
 
 import model.Sensore;
+import model.Valori;
 import model.Sensore.Tipo;
 
 public class AvvioSensori {
 
 	public static void main (String[] args) throws Exception {
 		
+		int i;
+		int tot=2500;
+		int z=1;
+		
+		/*for (i=1;i<=tot;i++) {
+		Valori valoriAss = new Valori(i);
+		}
+		
+		System.out.println("valori_associati inseriti");*/
+		
+		/*DAO.InsertUtente.registraDati(111, "Lillo", "Brillo", "324567894", "Citta", "lillo05", "utente");
+		
+		System.out.println("utente inserito");
+		
+		DAO.InsertCitta.registraDati(1, "L'Aquila", 111);
+		
+		System.out.println("città inserita");
+		
+		for (i=1;i<=10;i++) {
+			DAO.InsertUtente.registraDati(i+100, "Mario", "Rossi", ""+(i+100), "Zona", "utente"+(i+100), "utente");
+			DAO.InsertZona.registraDati(i, "zona"+i, i+100, 1);
+		}
+		
+		System.out.println("zone e utenti inseriti");*/
+		/*z=1;
+		for (i=1;i<=100;i++) {
+			if (z % 10 == 0) z++;
+			DAO.InsertUtente.registraDati(i, "Mario", "Rossi", ""+i, "Edificio", "utente"+i, "utente");
+			DAO.InsertEdificio.registraDati(i, "edificio"+i, i, z);
+		}
+		
+		System.out.println("edifici e utenti inseriti");*/		
+
+		for (i=1;i<=tot;i++) {
+			DAO.InsertStanza.registraDati(i, "stanza"+i, i % 5, i, "low", z );
+			if (i % 250 == 0) z++;
+		}
+		
+		System.out.println("stanze inseriti");
+		
+		for (i=0;i<tot;i++) {
+			Sensore sensore1 = new Sensore(i*3+(i+1), "S"+(i*3+(i+1)), Tipo.temperatura, i+1, 1);                  
+			Sensore sensore2 = new Sensore(i*3+(i+2), "S"+(i*3+(i+2)), Tipo.pressione, i+1, 1);                    
+			Sensore sensore3 = new Sensore(i*3+(i+3), "S"+(i*3+(i+3)), Tipo.luminosita, i+1, 1);                   
+			Sensore sensore4 = new Sensore(i*3+(i+4), "S"+(i*3+(i+4)), Tipo.umidita, i+1, 1);                      
+			
+		}
+		
+		System.out.println("sensori inseriti");
 		
 		
-		Sensore sensore1 = new Sensore(1, "T1", Tipo.temperatura, 1, 1);
+		
+		/*Sensore sensore1 = new Sensore(1, "T1", Tipo.temperatura, 1, 1);
 		Sensore sensore2 = new Sensore(2, "P1", Tipo.pressione, 1, 1);
 		Sensore sensore3 = new Sensore(3, "L1", Tipo.luminosita, 1, 1);
 		Sensore sensore4 = new Sensore(4, "T2", Tipo.temperatura, 1, 1);
@@ -63,7 +114,7 @@ public class AvvioSensori {
 		Sensore sensore47 = new Sensore(47, "P110", Tipo.pressione, 10, 1);
 		Sensore sensore48 = new Sensore(48, "L110", Tipo.luminosita, 10, 1);
 		Sensore sensore49 = new Sensore(49, "T210", Tipo.temperatura, 10, 1);
-		Sensore sensore50 = new Sensore(50, "U210", Tipo.umidita, 10, 1);
+		Sensore sensore50 = new Sensore(50, "U210", Tipo.umidita, 10, 1);*/
 		
 
 		
@@ -92,5 +143,5 @@ public class AvvioSensori {
 	
 
 
-    
+ 
 }
